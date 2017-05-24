@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>NodeJS 101</title>
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/angular.js"></script>
+    <script src="js/angular-route.js"></script>
+    <script src="js/clientApp.js"></script>
+</head>
+<body ng-app="DeveloperApp">
+    <div class="container" ng-controller="DeveloperController">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>
+                        <input ng-model="newUser.firstname" class="=forn-control"></th>
+                    </th>
+                    <th>
+                        <input ng-model="newUser.lastname" class="=forn-control"></th>
+                    </th>
+                    <th>
+                        <button ng-click="update(newUser)" class="btn btn-primary pull-right">
+                            <span class="glyphicon glyphicon-ok"></span>
+                        </button>
+                        <button ng-click="create(newUser)" class="btn btn-success pull-right">
+                            <span class="glyphicon glyphicon-plus"></span>
+                        </button>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="developer in developers">
+                    <td>{{developer.firstname}}</td>
+                    <td>{{developer.lastname}}</td>
+                    <td>
+                        <button ng-click="select($index)" class="btn btn-warning pull-right">
+                            <span class="glyphicon glyphicon-pencil"></span>
+                        </button>
+                        <button ng-click="remove($index)" class="btn btn-danger pull-right">
+                            <span class="glyphicon glyphicon-remove"></span>
+                        </button>
+                    </td>
+
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
