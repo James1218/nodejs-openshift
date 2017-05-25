@@ -35,8 +35,8 @@ function($scope, $http){
         $scope.selectIndex = index;  
     }
 
-    $scope.remove = function(index){
-        $http.delete("/developer/"+index)
+    $scope.remove = function(id){
+        $http.delete("/developer/"+id)
         .then(function(success){
             $scope.developers = success.data;
         }, function(error){
